@@ -3,62 +3,9 @@
   color: rgba(253, 253, 253, 1);
 }
 
-.about {
-  padding-top: 15vh;
-  padding-bottom: 5vh;
-}
-
-.about-pic {
-  width: 300px;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin: 2rem auto;
-  display: block
-}
-
-.contact {
-  padding-top: 20vh;
-  padding-bottom: 20vh;
-}
-
-.contact-icons {
-  text-align: center;
-  margin: auto;
-}
-
-.contact-icons .icon{
-  color: white;
-  font-size: 3.5em;
-  text-align: center;
-}
-
-.background-beige {
-  background-color: rgb(245,245,220);
-}
-
-.background-darkblue {
-  background-color: #22313F;
-}
-
-.box{
-  padding: 10%;
-}
 
 .btn-front-margin{
   margin: 0px 8px 0px 8px;
-}
-
-.carousel-caption h1{
-  color: #fff;
-  font-size: auto;
-  position: middle;
-}
-
-.carousel-item {
-  height: auto !important;
-  background-size: cover;
-  background-position: center center;
 }
 
 .center-box {
@@ -89,8 +36,8 @@
 }
 
 .icon{
-  padding-left: 9%;
-  padding-right: 9%;
+  padding-left: 2%;
+  padding-right: 2%;
 }
 .icon:hover{
   opacity:.50;
@@ -106,7 +53,7 @@
 
 .icon-panda:hover,
 .icon-panda:focus {
-  filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+  filter: invert(40%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
 }
 
 .navbar-fade {
@@ -146,50 +93,12 @@
   text-align: center;
 }
 
-.page-title {
-  font-size: 4rem;
-  font-weight: lighter;
-  text-align: center;
-}
-
-.page-sub-title {
-  font-weight: lighter;
-  text-align: center;
-  font-size: 3rem;
-  margin: 2rem 0;
-}
-
-.about-page-sub-title {
-  font-weight: lighter;
-  text-align: center;
-  color: #486A73;
-  font-size: 3rem;
-  margin: 2rem 0;
-}
-
-.about-page-sub-text {
-  font-weight: lighter;
-  text-align: center;
-  color: #486A73;
-  font-size: 5rem;
-  margin: 2rem 0;
-}
-
-.page-sub-text {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: lighter;
-  color: #FDFDFD;
-  text-align: center;
-  font-size: 1rem;
-  margin: 1rem 0;
-}
-
 #button_container {
   margin: 20px 0px 0px 0px
 }
 
 #intro {
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(119, 136, 153, 0.45)), url(../images/sf_colored.png);
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(119, 136, 153, 0.45)), url(../images/background.jpg);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
