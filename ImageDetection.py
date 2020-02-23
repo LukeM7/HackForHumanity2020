@@ -51,6 +51,9 @@ def main():
     for key in dictionary:
         isfound = False
         if key == completeJson['name']:
+            if completeJson['value'] < .5:
+                print('None found, value was only:', completeJson['value'] * 100, "% accurate.")
+                return None
             newArray.append(key)
             for size in range(0, 3):
                 newArray.append(dictionary[key][size])
@@ -60,7 +63,7 @@ def main():
         print(newArray)
         return newArray
     else:
-        print("None found")
+        print('None found')
         return None
 
 if __name__ == '__main__':
