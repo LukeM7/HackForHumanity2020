@@ -27,8 +27,10 @@ dictionary = {'Pepsi': {0: 'D',
                                   'reducing greenhouse gas emissions from packaging by 51% and waste from packaging by 2 million pounds.',
                                2: 'https://www.kettlebrand.com/sustainability/'},
               'Fiji': {0: 'A',
-                       1: 'B',
-                       2: 'C'},
+                       1: 'In 2007, Fiji Water has managed to keep their total annual carbon footprint low.'
+                          'The company is taking measures to continue to lower their carbon emissions and packaging materials.'
+                          'Fiji Water has goals to reduce the amount of fuel used in transporting their products.',
+                       2: 'https://www.csrwire.com/press_releases/15107-FIJI-Water-Becomes-First-Bottled-Water-Company-to-Release-Carbon-Footprint-of-Its-Products'},
               'Smartwater': {0: 'D',
                              1: 'Coca-Cola Company implements measures to reduce emissions, but has still increased in overall climate footprint.'
                                 'The company mentions using renewable energy, but is not clear about how much.'
