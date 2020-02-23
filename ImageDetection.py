@@ -1,9 +1,6 @@
 from clarifai.rest import ClarifaiApp
-from clarifai.rest import Image as ClImage
-from glob import glob
-import os
 import json
-from test import SortImageName
+
 # name, grade, 3 bullet points, source
 dictionary = {'Pepsi': {0: 'D',
                         1: 'PepsiCo has managed to decrease its total climate footprint from 2014 to 2017.'
@@ -38,30 +35,29 @@ dictionary = {'Pepsi': {0: 'D',
                                 ' from sustainable sources',
                              2: 'https://rankabrand.org/soda/Coca-Cola'}
               }
-newArray = []
-app = ClarifaiApp(api_key='a83ecce289b64338a8036f3603e8d551')
+newArray = [] # Array that is returned. Stored as [name,grade,description,source]
+app = ClarifaiApp(api_key='a83ecce289b64338a8036f3603e8d551') # api call
 
 def main():
     model1 = app.models.get('Brand')
     url = input("URL of image: ")
     output = model1.predict_by_url(url)['outputs'][0]['data']['concepts']
-    newJson = json.dumps(output[0])
-    completeJson = json.loads(newJson)
-    print(completeJson['name'])
-    for key in dictionary:
-        isfound = False
-        if key == completeJson['name']:
-            if completeJson['value'] < .5:
-                print('None found, value was only:', completeJson['value'] * 100, "% accurate.")
-                return None
-            newArray.append(key)
-            for size in range(0, 3):
-                newArray.append(dictionary[key][size])
-            isfound = True
+    newJson = json.dumps(output[0]) # dumps json data into newJson
+    completeJson = json.loads(newJson) # loads json data into completeJson
+    for key in dictionary: # loops through dictionary
+        isfound = False # boolean to determine if anything is found
+        if key == completeJson['name']: # if dictionary key (name) equals the name in Json, executes code block
+            if completeJson['value'] < .5: # Checks if API is over 50% sure of its prediction
+                # print('None found, value was only:', completeJson['value'] * 100, "% accurate.")
+                return None # returns null if api was too unsure
+            newArray.append(key) # first element of array is the name (or key of dictionary
+            for size in range(0, 3): # loops from 0-2
+                newArray.append(dictionary[key][size]) # appends the 0-2 key values of the original key
+            isfound = True 
             break
-    if isfound:
-        print(newArray)
-        return newArray
+    if isfound: #checks if database name was found and matched
+        #print(newArray)
+        return newArray 
     else:
         print('None found')
         return None
