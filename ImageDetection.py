@@ -38,9 +38,9 @@ dictionary = {'Pepsi': {0: 'D',
 newArray = [] # Array that is returned. Stored as [name,grade,description,source]
 app = ClarifaiApp(api_key='a83ecce289b64338a8036f3603e8d551') # api call
 
-def main():
+def main(url):
     model1 = app.models.get('Brand')
-    url = input("URL of image: ")
+    #url = input("URL of image: ")
     output = model1.predict_by_url(url)['outputs'][0]['data']['concepts']
     newJson = json.dumps(output[0]) # dumps json data into newJson
     completeJson = json.loads(newJson) # loads json data into completeJson
@@ -53,11 +53,11 @@ def main():
             newArray.append(key) # first element of array is the name (or key of dictionary
             for size in range(0, 3): # loops from 0-2
                 newArray.append(dictionary[key][size]) # appends the 0-2 key values of the original key
-            isfound = True 
+            isfound = True
             break
     if isfound: #checks if database name was found and matched
         #print(newArray)
-        return newArray 
+        return newArray
     else:
         print('None found')
         return None
