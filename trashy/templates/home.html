@@ -6,7 +6,7 @@
     <div>
       <h1>Please Upload an Image</h1>
       <hr style="width: 60%; background: #fff;">
-      <p><input name='text' type="file" accept="image/*" name="image" id="file" onchange="loadFile(event)" style="display: none;"></p>
+      <p><input name='text' type="file" accept="image/*" name="text" id="file" onchange="loadFile(event)" style="display: none;"></p>
       <label for="file" class="btn btn-front-margin btn-outline-light" style="cursor: pointer;">Upload Image</label>
     </div>
 
@@ -21,22 +21,38 @@
         <h1 class="about-page-sub-title">Information</h1>
       </div>
     </div>
+
+      <form action="/info" method="POST">
+      <input name="text" value="bafels">
+      <input type="submit" value="Submit">
+      </form>
+      {% if text %}
+        You said: {{ text }}
+      {% endif %}
+
   </div>
 </body>
-<!-- <form action="/info" method="POST">
-  <input name="text">
-  <input type="submit" value="Submit">
-  </form>
 
-  {% if text %}
-    You said: {{ text }}
-  {% endif %}-->
 <script>
   var loadFile = function(event) {
+      const files = event.target.files
+      const formData = new FormData()
+      formData.append('myFile', files[0])
+
       var image = document.getElementById('output');
       image.src = URL.createObjectURL(event.target.files[0]);
-      alert(image.src);
-  return image.src;
+
+      fetch('/processImage', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data.path)
+      })
+      .catch(error => {
+        console.error(error)
+      })
   };
 </script>
 {% endblock %}
