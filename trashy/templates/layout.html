@@ -4,13 +4,8 @@
   <head>
     <meta charset="utf-8">
     <title>Trashy</title>
-
-
-
-
-
       <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/cosmo/bootstrap.min.css" rel="stylesheet" integrity="sha384-qdQEsAI45WFCO5QwXBelBe1rR9Nwiss4rGEqiszC+9olH1ScrLrMQr1KmDR964uZ" crossorigin="anonymous">
-
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
         <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> -->
 
 
@@ -20,9 +15,10 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
   </head>
+
   <body>
 
-    <div class="container">
+    <div>
       {% include 'includes/_messages.html' %}
       {% block body %}{% endblock %}
     </div>

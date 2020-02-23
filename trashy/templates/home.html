@@ -1,13 +1,17 @@
 {% extends 'layout.html' %}
 
 {% block body %}
-<div class="jumbotron text-center">
-  <h1>Please Upload an Image</h1>
-        <p><input type="file" accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
-        <p><label for="file" class="btn btn-front-margin btn-outline-light" style="cursor: pointer;">Upload Image</label></p>
+<body>
+  <div class="container-fluid text-center">
+      <h1>Please Upload an Image</h1>
+            <p><input type="file" accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
+            <p><label for="file" class="btn btn-front-margin btn-outline-dark" style="cursor: pointer;">Upload Image</label></p>
 
-        <p><img id="output" width="200" /></p>
-	</div>
+            <p>
+            <p><img id="output" width="200" /></p>
+          </p>
+  </div>
+</body>
 <!-- might add a cartoon web scrap image here -->
 <script>
   var loadFile = function(event) {
