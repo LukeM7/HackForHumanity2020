@@ -1,12 +1,20 @@
-  {% extends 'layout.html' %}
+{% extends 'layout.html' %}
 
-  {% block body %}
-    <div class="jumbotron text-center">
-      <h1>hack for humanity</h1>
-      <p class="lead"> Made using Flask python frameowrk </p>
-    </div>
-    <a href="/about">bob</a>
+{% block body %}
+<div class="jumbotron text-center">
+  <h1>Please Upload an Image</h1>
+        <p><input type="file" accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
+        <p><label for="file" class="btn btn-front-margin btn-outline-light" style="cursor: pointer;">Upload Image</label></p>
 
+        <p><img id="output" width="200" /></p>
+	</div>
+<!-- might add a cartoon web scrap image here -->
+<script>
+  var loadFile = function(event) {
+      var image = document.getElementById('output');
+      image.src = URL.createObjectURL(event.target.files[0]);
 
-    <!-- might add a cartoon web scrap image here -->
-  {% endblock %}
+      return image.src;
+  };
+</script>
+{% endblock %}

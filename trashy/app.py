@@ -1,5 +1,5 @@
 from flask import Flask, render_template, flash, redirect, url_for, session, request, logging
-from functools import wraps
+from flask_bootstrap import Bootstrap
 import requests
 
 app = Flask(__name__)
