@@ -22,10 +22,10 @@
 
         <h1 class="about-page-sub-title">Information</h1>
         <hr style="width: 50%; background: #486A73;">
-        <h2 class='about-page-sub-title' id='brand'></h2>
-        <h2 class='about-page-sub-title' id='grade'> </h2>
-        <h2 class='about-page-sub-title' id='facts'></h2>
-        <h2 class='about-page-sub-title' id='link'></h2>
+        <h2 class='about-page-sub-title' id='brand'>Brand: </h2>
+        <h2 class='about-page-sub-title' id='grade'>Grade: </h2>
+        <h2 class='about-page-sub-title' id='facts'>Facts: </h2>
+        <h2 class='about-page-sub-title' id='link'>Source: </h2>
 
       </div>
     </div>
@@ -50,10 +50,10 @@
       .then(response => response.json())
       .then(data => {
         console.log(data)
-        document.getElementById("brand").innerHTML = "Brand: "+data[0];
-        document.getElementById("grade").innerHTML = "Grade: "+data[1];
-        document.getElementById("facts").innerHTML = "Facts: "+data[2];
-        document.getElementById("link").innerHTML = "Source: "+data[3];
+        document.getElementById("brand").innerHTML = data[0];
+        document.getElementById("grade").innerHTML = data[1];
+        document.getElementById("facts").innerHTML = data[2];
+        document.getElementById("link").innerHTML = data[3];
       })
       .catch(error => {
         console.error(error)

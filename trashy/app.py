@@ -56,7 +56,9 @@ def processImage():
         im.save('userImages/userim.png')
 
         imageInfo = main('userImages/userim.png')
+
         print(imageInfo[0])
+
         return json.dumps(imageInfo)
 
 
@@ -66,8 +68,11 @@ newArray = [] # Array that is returned. Stored as [name,grade,description,source
 app2 = ClarifaiApp(api_key='a83ecce289b64338a8036f3603e8d551') # api call
 
 def main(url):
+    newArray = []
     model1 = app2.models.get('Brand')
     #url = input("URL of image: ")
+    output = None
+    print(output)
     output = model1.predict_by_filename(url)['outputs'][0]['data']['concepts']
     print(output)
     newJson = json.dumps(output[0]) # dumps json data into newJson
