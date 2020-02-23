@@ -1,9 +1,7 @@
 from flask import Flask, render_template, flash, redirect, url_for, session, request, logging
-from flask_bootstrap import Bootstrap
 import requests
 
 app = Flask(__name__)
-Bootstrap(app)
 
 @app.route('/')
 def index():

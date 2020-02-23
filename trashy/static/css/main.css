@@ -1,8 +1,39 @@
+* {
+  font-family: 'Open Sans', sans-serif;
+  color: rgba(253, 253, 253, 1);
+}
+
 body {
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(119, 136, 153, 0.45)), url(../img/background.jpg));
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(119, 136, 153, 0.45)), url(../images/background.jpg);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center bottom;
+  height: 100vh;
+}
+
+.about-page-sub-title {
+  font-weight: lighter;
+  text-align: center;
+  color: #486A73;
+  font-size: 3rem;
+  margin: 2rem 0;
+}
+
+.background-beige {
+  background-color: rgb(245,245,220);
+}
+
+.background-darkblue {
+  background-color: #22313F;
+}
+
+.fill-first{
+  min-height: 100%;
+  height: 200px;
+}
+
+.fill {
+  min-height: 100%;
   height: 100vh;
 }
