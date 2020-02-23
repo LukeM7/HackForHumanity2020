@@ -1,5 +1,6 @@
 from flask import Flask, render_template, flash, redirect, url_for, session, request, logging
 from PIL import Image
+import os
 import requests
 
 from clarifai.rest import ClarifaiApp
@@ -50,12 +51,11 @@ def index():
 @app.route('/processImage', methods=['POST'])
 def processImage():
     if request.method == 'POST':
-        print("testing22")
         image = request.files.get("myFile")
         print(image)
-        im = Image.open(image)#im is a pillow object
-        rgb_im = im.convert('RGB')
-        im.save("userinp.jpg")
+        im = Image.open(image, mode='r')#im is a pillow object
+
+        im.save('userImages/userim.png')
 
     imageInfo = main(#ryans image url thing)
     return render_template("home2.html", brand = imageInfo[0], grade = imageInfo[1], bullets = imageInfo[2:5], link = imageInfo[5])
