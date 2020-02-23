@@ -7,32 +7,32 @@ from clarifai.rest import ClarifaiApp
 import json
 
 # name, grade, 3 bullet points, source
-dictionary = {'Pepsi': {0: 'D',
-                        1: 'PepsiCo has managed to decrease its total climate footprint from 2014 to 2017.'
+dictionary = {'Pepsi': {0: 'Large',
+                        1: 'PepsiCo has managed to decrease its total climate footprint from 2014 to 2017. '
                            'PepsiCo scores poorly because the brand remains secretive in its sustainability report'
                            'and refuses to disclose information. PepsiCo mentions target to reduce carbon emissions.',
                         2: 'https://rankabrand.org/soda/Pepsi'},
-              'Coke': {0: 'D',
+              'Coke': {0: 'Large',
                        1: 'Coca-Cola Company implements measures to reduce emissions, but has still increased in overall climate footprint.'
                           'The company mentions using renewable energy, but is not clear about how much.'
                           'Coca-Cola Company implements measures to purchase its other products, such as coffee, tea and fruits, from sustainable sources',
                        2: 'https://rankabrand.org/soda/Coca-Cola'},
-              'Yerba': {0: 'B',
+              'Yerba': {0: 'Medium',
                         1: 'Guayaki harvests yerba in an organic and ecologically friendly manner.'
                             ' Guayaki actively contributes to environmental protection by working to restore 200,000 acres of rainforest. '
                             'The company creates 1,000 living wage jobs for local workers.',
                         2: 'https://magazine.wellwallet.com/gold-indios-guayakis-yerba-mate-ushering-sustainable-economy'},
-              'Kettle Brand': {0: 'B',
+              'Kettle Brand': {0: 'Medium',
                                1: 'After cooking chips with vegetable oil, Kettle Brand converts excess oil to biodiesel to fuel their vehicles.'
                                   'In 2019, Kettle Brand chips cut the amount of materials used in packaging by 43%,'
                                   'reducing greenhouse gas emissions from packaging by 51% and waste from packaging by 2 million pounds.',
                                2: 'https://www.kettlebrand.com/sustainability/'},
-              'Fiji': {0: 'A',
+              'Fiji': {0: 'Small',
                        1: 'In 2007, Fiji Water has managed to keep their total annual carbon footprint low.'
                           'The company is taking measures to continue to lower their carbon emissions and packaging materials.'
                           'Fiji Water has goals to reduce the amount of fuel used in transporting their products.',
                        2: 'https://www.csrwire.com/press_releases/15107-FIJI-Water-Becomes-First-Bottled-Water-Company-to-Release-Carbon-Footprint-of-Its-Products'},
-              'Smartwater': {0: 'D',
+              'Smartwater': {0: 'Large',
                              1: 'Coca-Cola Company implements measures to reduce emissions, but has still increased in overall climate footprint.'
                                 'The company mentions using renewable energy, but is not clear about how much.'
                                 'Coca-Cola Company implements measures to purchase its other products, such as coffee, tea and fruits, from sustainable sources'

@@ -19,13 +19,12 @@
         <img id="output" height="height" width="400" />
       </div>
       <div class="col-lg-6">
-
         <h1 class="about-page-sub-title">Information</h1>
         <hr style="width: 50%; background: #486A73;">
-        <h2 class='about-page-sub-title' id='brand'>Brand: </h2>
-        <h2 class='about-page-sub-title' id='grade'>Grade: </h2>
-        <h2 class='about-page-sub-title' id='facts'>Facts: </h2>
-        <h2 class='about-page-sub-title' id='link'>Source: </h2>
+        <h2><span class='about-page-sub-title' id='brand'></span></h2>
+         <h2><span class='about-page-sub-title' id='grade'></span></h2>
+        <h2 class='about-page-sub-title'><span class='paragraph-edit' id='facts'></span></h2>
+        <h2 class='about-page-sub-title'><a href=id class='paragraph-edit' id='link'></a> </h2>
 
       </div>
     </div>
@@ -43,6 +42,10 @@
       var image = document.getElementById('output');
       image.src = URL.createObjectURL(event.target.files[0]);
 
+      document.getElementById("brand").innerHTML = '';
+      document.getElementById("grade").innerHTML = '';
+      document.getElementById("facts").innerHTML = '';
+      document.getElementById("link").innerHTML = '';
       fetch('/processImage', {
         method: 'POST',
         body: formData
@@ -50,13 +53,17 @@
       .then(response => response.json())
       .then(data => {
         console.log(data)
-        document.getElementById("brand").innerHTML = data[0];
-        document.getElementById("grade").innerHTML = data[1];
+        document.getElementById("brand").innerHTML = 'Brand: '+ data[0];
+        document.getElementById("grade").innerHTML = 'Carbon Footprint: ' + data[1];
         document.getElementById("facts").innerHTML = data[2];
         document.getElementById("link").innerHTML = data[3];
       })
       .catch(error => {
         console.error(error)
+        document.getElementById("brand").innerHTML = 'Image not recognized.<br> Please input a valid image.'
+        document.getElementById("grade").innerHTML = '';
+        document.getElementById("facts").innerHTML = '';
+        document.getElementById("link").innerHTML = '';
       })
   };
 </script>
