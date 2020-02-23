@@ -8,7 +8,11 @@ import json
 
 # name, grade, 3 bullet points, source
 dictionary = {'Pepsi': {0: 'Large',
+<<<<<<< HEAD
                         1: 'PepsiCo has managed to decrease its total climate footprint from 2014 to 2017. '
+=======
+                        1: 'PepsiCo, who also sells Lays, has managed to decrease its total climate footprint from 2014 to 2017.'
+>>>>>>> be791511a0ee8d2a6012ce2b07a962d315315cd2
                            'PepsiCo scores poorly because the brand remains secretive in its sustainability report'
                            'and refuses to disclose information. PepsiCo mentions target to reduce carbon emissions.',
                         2: 'https://rankabrand.org/soda/Pepsi'},
@@ -33,7 +37,11 @@ dictionary = {'Pepsi': {0: 'Large',
                           'Fiji Water has goals to reduce the amount of fuel used in transporting their products.',
                        2: 'https://www.csrwire.com/press_releases/15107-FIJI-Water-Becomes-First-Bottled-Water-Company-to-Release-Carbon-Footprint-of-Its-Products'},
               'Smartwater': {0: 'Large',
+<<<<<<< HEAD
                              1: 'Coca-Cola Company implements measures to reduce emissions, but has still increased in overall climate footprint.'
+=======
+                             1: 'Smartwaters parent company, Coca-Cola, implements measures to reduce emissions, but has still increased in overall climate footprint.'
+>>>>>>> be791511a0ee8d2a6012ce2b07a962d315315cd2
                                 'The company mentions using renewable energy, but is not clear about how much.'
                                 'Coca-Cola Company implements measures to purchase its other products, such as coffee, tea and fruits, from sustainable sources'
                              ,2: 'https://rankabrand.org/soda/Coca-Cola'}
@@ -80,9 +88,9 @@ def main(url):
     for key in dictionary: # loops through dictionary
         isfound = False # boolean to determine if anything is found
         if key == completeJson['name']: # if dictionary key (name) equals the name in Json, executes code block
-            if completeJson['value'] < .5: # Checks if API is over 50% sure of its prediction
-                # print('None found, value was only:', completeJson['value'] * 100, "% accurate.")
-                return None # returns null if api was too unsure
+            # if completeJson['value'] < .5: # Checks if API is over 50% sure of its prediction
+            #     # print('None found, value was only:', completeJson['value'] * 100, "% accurate.")
+            #     return None # returns null if api was too unsure
             newArray.append(key) # first element of array is the name (or key of dictionary
             for size in range(0, 3): # loops from 0-2
                 newArray.append(dictionary[key][size]) # appends the 0-2 key values of the original key
