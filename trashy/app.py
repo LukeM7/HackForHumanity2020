@@ -32,7 +32,7 @@ dictionary = {'Pepsi': {0: 'Large',
                           'The company is taking measures to continue to lower their carbon emissions and packaging materials.'
                           'Fiji Water has goals to reduce the amount of fuel used in transporting their products.',
                        2: 'https://www.csrwire.com/press_releases/15107-FIJI-Water-Becomes-First-Bottled-Water-Company-to-Release-Carbon-Footprint-of-Its-Products'},
-              'Smartwater': {0: 'Large',
+              'Smart Water': {0: 'Large',
                              1: 'Smartwater\'s parent company, Coca-Cola, implements measures to reduce emissions, but has still increased in overall climate footprint.'
                                 'The company mentions using renewable energy, but is not clear about how much.'
                                 'Coca-Cola Company implements measures to purchase its other products, such as coffee, tea and fruits, from sustainable sources'
@@ -80,9 +80,9 @@ def main(url):
     for key in dictionary: # loops through dictionary
         isfound = False # boolean to determine if anything is found
         if key == completeJson['name']: # if dictionary key (name) equals the name in Json, executes code block
-            # if completeJson['value'] < .5: # Checks if API is over 50% sure of its prediction
-            #     # print('None found, value was only:', completeJson['value'] * 100, "% accurate.")
-            #     return None # returns null if api was too unsure
+            if completeJson['value'] < .8: # Checks if API is over 50% sure of its prediction
+                # print('None found, value was only:', completeJson['value'] * 100, "% accurate.")
+                return None # returns null if api was too unsure
             newArray.append(key) # first element of array is the name (or key of dictionary
             for size in range(0, 3): # loops from 0-2
                 newArray.append(dictionary[key][size]) # appends the 0-2 key values of the original key
