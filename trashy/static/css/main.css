@@ -3,13 +3,12 @@
   color: rgba(253, 253, 253, 1);
 }
 
-body {
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(119, 136, 153, 0.45)), url(../images/background.jpg);
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center bottom;
-  height: 100vh;
+.paragraph_edit {
+  font-weight: lighter;
+  text-align: center;
+  color: #486A73; !important
+  font-size: 2.5rem;
+  margin: 2rem 0;
 }
 
 .about-page-sub-title {

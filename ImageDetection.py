@@ -5,13 +5,12 @@ import json
 dictionary = {'Pepsi': {0: 'D',
                         1: 'PepsiCo has managed to decrease its total climate footprint from 2014 to 2017.'
                            'PepsiCo scores poorly because the brand remains secretive in its sustainability report'
-                           ' and refuses to disclose information. PepsiCo mentions target to reduce carbon emissions.',
+                           'and refuses to disclose information. PepsiCo mentions target to reduce carbon emissions.',
                         2: 'https://rankabrand.org/soda/Pepsi'},
               'Coke': {0: 'D',
                        1: 'Coca-Cola Company implements measures to reduce emissions, but has still increased in overall climate footprint.'
                           'The company mentions using renewable energy, but is not clear about how much.'
-                          'Coca-Cola Company implements measures to purchase its other products, such as coffee, tea and fruits,'
-                          ' from sustainable sources',
+                          'Coca-Cola Company implements measures to purchase its other products, such as coffee, tea and fruits, from sustainable sources',
                        2: 'https://rankabrand.org/soda/Coca-Cola'},
               'Yerba': {0: 'B',
                         1: 'Guayaki harvests yerba in an organic and ecologically friendly manner.'
@@ -20,7 +19,7 @@ dictionary = {'Pepsi': {0: 'D',
                         2: 'https://magazine.wellwallet.com/gold-indios-guayakis-yerba-mate-ushering-sustainable-economy'},
               'Kettle Brand': {0: 'B',
                                1: 'After cooking chips with vegetable oil, Kettle Brand converts excess oil to biodiesel to fuel their vehicles.'
-                                  ' In 2019, Kettle Brand chips cut the amount of materials used in packaging by 43%,'
+                                  'In 2019, Kettle Brand chips cut the amount of materials used in packaging by 43%,'
                                   'reducing greenhouse gas emissions from packaging by 51% and waste from packaging by 2 million pounds.',
                                2: 'https://www.kettlebrand.com/sustainability/'},
               'Fiji': {0: 'A',
@@ -31,8 +30,7 @@ dictionary = {'Pepsi': {0: 'D',
               'Smartwater': {0: 'D',
                              1: 'Coca-Cola Company implements measures to reduce emissions, but has still increased in overall climate footprint.'
                                 'The company mentions using renewable energy, but is not clear about how much.'
-                                'Coca-Cola Company implements measures to purchase its other products, such as coffee, tea and fruits,'
-                                ' from sustainable sources',
+                                'Coca-Cola Company implements measures to purchase its other products, such as coffee, tea and fruits, from sustainable sources'
                              2: 'https://rankabrand.org/soda/Coca-Cola'}
               }
 newArray = [] # Array that is returned. Stored as [name,grade,description,source]

@@ -4,9 +4,9 @@
 <body class="center-box">
   <div class="fill-first background-darkblue container-fluid text-center center-box">
     <div>
-      <h1>Please Upload an Image</h1>
-      <hr style="width: 60%; background: #fff;">
-      <p><input name='text' type="file" accept="image/*" name="text" id="file" onchange="loadFile(event)" style="display: none;"></p>
+      <h1><br>Please Upload an Image</h1>
+      <hr style="width: 60%; background: #486A73;">
+      <p><input name='text' type="file" accept="image/*" method=POST id="file" onchange="loadFile(event)" style="display: none;"></p>
       <label for="file" class="btn btn-front-margin btn-outline-light" style="cursor: pointer;">Upload Image</label>
     </div>
 
@@ -15,20 +15,21 @@
     <div class="row">
       <div class="col-lg-6">
         <h1 class="about-page-sub-title">Image</h1>
+        <hr style="width: 50%; background: #486A73;">
         <img id="output" height="height" width="400" />
       </div>
       <div class="col-lg-6">
+
         <h1 class="about-page-sub-title">Information</h1>
+        <hr style="width: 50%; background: #486A73;">
+        <h2 class='about-page-sub-title' id='brand'></h2>
+        <h2 class='about-page-sub-title' id='grade'> </h2>
+        <h2 class='about-page-sub-title' id='facts'></h2>
+        <h2 class='about-page-sub-title' id='link'></h2>
+
       </div>
     </div>
 
-      <form action="/info" method="POST">
-      <input name="text" value="bafels">
-      <input type="submit" value="Submit">
-      </form>
-      {% if text %}
-        You said: {{ text }}
-      {% endif %}
 
   </div>
 </body>
@@ -48,7 +49,11 @@
       })
       .then(response => response.json())
       .then(data => {
-        console.log(data.path)
+        console.log(data)
+        document.getElementById("brand").innerHTML = "Brand: "+data[0];
+        document.getElementById("grade").innerHTML = "Grade: "+data[1];
+        document.getElementById("facts").innerHTML = "Facts: "+data[2];
+        document.getElementById("link").innerHTML = "Source: "+data[3];
       })
       .catch(error => {
         console.error(error)
